@@ -1,0 +1,34 @@
+.root {
+  color: #616161;
+  .modalCardHeader {
+    padding: 2em;
+    border-radius: 0;
+    background-color: #fff;
+    .modalCardTitle {
+      margin: 0;
+      color: #676a6c;
+      font-weight: bold;
+    }
+  }
+
+  .modalCardBody {
+    padding: 3em;
+    background-color: #f9f9f9;
+    .saveField {
+      text-align: center;
+      margin-top: 2rem;
+      .save {
+        padding-left: 4rem;
+        padding-right: 4rem;
+      }
+    }
+    .input {
+      border-radius: 0;
+    }
+
+    .label {
+      color: #696c6e;
+    }
+
+  }
+}

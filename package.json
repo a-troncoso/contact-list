@@ -1,0 +1,40 @@
+{
+  "name": "contact-list",
+  "version": "0.1.0",
+  "description": "Contact list built in react",
+  "main": "/build/app.js",
+  "scripts": {
+    "build": "webpack --colors",
+    "serve": "webpack-dev-server --content-base build/ --colors --progress",
+    "start": "npm run build && npm run serve"
+  },
+  "keywords": [],
+  "author": "Álvaro Troncoso",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^2.30.1",
+    "jsx-html-class": "^1.0.3",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.6",
+    "webpack-dev-server": "^2.7.1",
+    "webpack-node-externals": "^1.6.0"
+  },
+  "dependencies": {
+    "bloomer": "^0.6.2",
+    "bulma": "^0.5.1",
+    "immutability-helper": "^2.4.0",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}
