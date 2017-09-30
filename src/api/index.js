@@ -1,14 +1,12 @@
-// import fetch from 'isomorphic-fetch'
-
 const baseURL = 'http://localhost:3000'
 
 const API = {
   users: {
-		async get(q) {
-			const response = await fetch(`${baseURL}/api/users?q=${q}`)
-			const data = await response.json()
-			return data
-		},
+    async get(currentPage, limit, q) {
+      const response = await fetch(`${baseURL}/api/users?_page=${currentPage}&_limit=${limit}&q=${q}`)
+      const data = await response.json()
+      return data
+    },
     async create(newUser) {
       const payload = {
         name: newUser.name,
@@ -22,7 +20,7 @@ const API = {
         body: JSON.stringify(payload)
       })
       const data = await response.json()
-			return data
+      return data
     },
     async delete(id) {
       const response = await fetch(`${baseURL}/api/users/${id}`, {
@@ -31,7 +29,7 @@ const API = {
       const data = await response.json()
       return data
     }
-	}
+  }
 }
 
 export default API

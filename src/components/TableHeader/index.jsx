@@ -9,7 +9,8 @@ import { Columns, Column } from 'bloomer'
 import style from './TableHeader.scss'
 
 const propTypes = {
-  onChangeSearcher: PropTypes.func.isRequired
+  onChangeSearcher: PropTypes.func.isRequired,
+  onAddUser: PropTypes.func.isRequired
 }
 
 class TableHeader extends Component {
@@ -23,6 +24,7 @@ class TableHeader extends Component {
 
     this.showNewContact = this.showNewContact.bind(this)
     this.onChangeSearcher = this.onChangeSearcher.bind(this)
+    // this.onAddUser = this.onAddUser.bind(this)
   }
 
   showNewContact() {
@@ -40,6 +42,10 @@ class TableHeader extends Component {
     this.props.onChangeSearcher(event.target.value)
   }
 
+  // onAddUser(newUser) {
+  //   const
+  // }
+
   render() {
     return (
       <Columns className={style.root} >
@@ -52,7 +58,9 @@ class TableHeader extends Component {
                 placeholder="Buscar contacto..."
                 value={this.state.searcherValue}
                 onChange={this.onChangeSearcher} />
-              <span className="icon is-small is-left has-text-primary"> <i className="fa fa-search"></i> </span>
+              <span className="icon is-small is-left has-text-primary">
+                <i className="fa fa-search"></i>
+              </span>
             </div>
           </div>
         </Column>
@@ -64,7 +72,11 @@ class TableHeader extends Component {
             <span>Nuevo Contacto</span>
           </a>
         </Column>
-        <NewContact isActive={this.state.showNewContact} onChangeDisplay={this.showNewContact}></NewContact>
+        <NewContact
+          isActive={this.state.showNewContact}
+          onChangeDisplay={this.showNewContact}
+          onAddUser={this.props.onAddUser}
+          ></NewContact>
       </Columns>
     )
   }

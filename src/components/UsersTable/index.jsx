@@ -7,9 +7,12 @@ import UserCard from '../UserCard'
 import style from './UsersTable.scss'
 
 const propTypes = {
-  onEnterRow: PropTypes.func.isRequired,
   users: PropTypes.array.isRequired,
-  onRemoveUser: PropTypes.func.isRequired
+  page: PropTypes.number.isRequired,
+  limit: PropTypes.number.isRequired,
+  onEnterRow: PropTypes.func.isRequired,
+  onRemoveUser: PropTypes.func.isRequired,
+  onChangePage: PropTypes.func.isRequired
 }
 
 class UsersTable extends Component {
@@ -48,7 +51,11 @@ class UsersTable extends Component {
               })}
             </tbody>
           </table>
-        </div>
+          <div className={style.nextPage}>
+            <p onClick={() => this.props.onChangePage(-1)} style={{visibility: this.props.page != 1 ? 'visible' : 'hidden' }}><i className="fa fa-arrow-circle-left has-text-primary"></i> Página anterior</p>
+            <p onClick={() => this.props.onChangePage(1)} style={{visibility: this.props.users.length >= this.props.limit ? 'visible' : 'hidden' }}>Siguiente página <i className="fa fa-arrow-circle-right has-text-primary"></i></p>
+          </div>
+    </div>
       </div>
     );
   }

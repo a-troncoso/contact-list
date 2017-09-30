@@ -12,6 +12,14 @@
       }
     }
   }
+  .nextPage {
+    display: flex;
+    justify-content: space-between;
+    p {
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
 }
 
 .root {table {thead {tr {th:first-child {
